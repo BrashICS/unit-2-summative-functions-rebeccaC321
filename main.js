@@ -59,21 +59,42 @@ function round_user(value) {
 // Calculate the y-value of a parabola from standand form
 function y_quad(a, b, c, x) {
 
-    x = (-b + Math.sqrt((b*2) - 4*(a*c))) / (2*a)
+    let y = ((a)*x**2) + (b*x) + c
 
-    return x
+    return y
+
+}
+
+
+
+// Determine the zeros of a quadratic using user-inputs for a, b, and c
+function zeros() {
+
+    let a = Number(document.getElementById("a").value)
+    let b = Number(document.getElementById("b").value)
+    let c = Number(document.getElementById("c").value)
+   
+    let answer =  ((-1*b + (b**2 - 4*a*c)) / (2*a))
+    
+    document.getElementById("quadratic_output").textContent = `${answer}`
 
 }
 
 // (-b±√(b²-4ac))/(2a)
 
 
-// Determine the zeros of a quadratic using user-inputs for a, b, and c
-function zeros() {
-}
 
 // Determine the vertex of a quadratic using user-inputs for a, b, and c
 function vertex() {
+    let a = Number(document.getElementById("a").value)
+    let b = Number(document.getElementById("b").value)
+    let c = Number(document.getElementById("c").value)
+
+    let h = -1 *(b/2*a)
+ 
+    let ver = (a*(b-h)**2 + b)
+
+    document.getElementById("quadratic_output").textContent = `${ver}`
 
 }
 
